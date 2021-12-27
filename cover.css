@@ -5,8 +5,15 @@
 
 html,
 body {
-  height: 100%;
-  background-color: #344955;
+  height:100%;
+  /* min-height: 100%; */
+  max-height:max-content;
+  overflow-y:auto;
+  /* background-color: #344955; */
+  background: rgb(73,44,166);
+  background: linear-gradient(218deg, rgba(73,44,166,1) 47%, rgba(116,68,75,1) 100%);
+  background-size:contain;
+  background-repeat: no-repeat;
 }
 body {
   color: #fff;
@@ -80,7 +87,7 @@ h2{
 h3{
     font-family: 'Open Sans', sans-serif;
 }
-h5{
+h5{  
     font-family: 'Open Sans', sans-serif;
     color: #F9AA33;
 }
