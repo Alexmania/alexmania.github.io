@@ -1,75 +1,109 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<link rel="icon" type="image/png" href="images/tech.png" hreflang="en-us">
-    <title>Alex Marian / experience</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link href="cover.css" rel="stylesheet">
-	<link href="menu.css" rel="stylesheet">
-	
-	<!-- Custom Font -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200|Open+Sans:300" rel="stylesheet">
-	<link href="https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff" rel="stylesheet">
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="images/tech.png" hreflang="en-us" />
+    <title>Alex Marian / Experience</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Experience and resume of Alex Marian — TPM, design systems, and cross-app programs." />
+    <!-- Keep CSS minimal for speed -->
+    <link href="cover.css" rel="stylesheet" />
+    <link href="menu.css" rel="stylesheet" />
+    <style>
+      .highlights { text-align: left; margin-top: 16px; }
+      .highlights h3 { margin-top: 0; margin-bottom: 8px; }
+      .highlights ul { margin: 0; padding-left: 1.1rem; list-style: none; }
+      .highlights li { margin-bottom: 12px; display: flex; align-items: flex-start; }
+      .highlights li span.icon { margin-right: 8px; font-size: 1.2rem; line-height: 1.4; flex-shrink: 0; }
+      .skills-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+      .skills-tags .tag {
+        font-size: 0.8rem; line-height: 1; padding: .4rem .6rem; border-radius: 999px;
+        border: 1px solid var(--accent); background: rgba(255,255,255,.65); color: var(--link); white-space: nowrap;
+      }
+      @media (prefers-color-scheme: dark){
+        .skills-tags .tag { background: rgba(42,42,40,.65); color: var(--text); }
+      }
+    </style>
   </head>
   <body>
-	<header class="header">
-		<input class="menu-btn" type="checkbox" id="menu-btn" />
-		<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-		<ul class="menu">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="about.html">About</a></li>
-			<li><a href="experience.html">Experience</a></li>
-		</ul>
-	</header>
-      <div class="site-wrapper">
-        <div class="site-wrapper-inner-about">  
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<h2>Experience</h2>
-					</div>
+    <header class="header" role="navigation" aria-label="Primary">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="experience.html" aria-current="page">Experience</a></li>
+      </ul>
+    </header>
+
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner-about">
+        <div class="cover-container">
+          <h2>Experience</h2>
+
+          <!-- Core skills first -->
+          <section class="highlights">
+            <h3>Core Skills</h3>
+            <div class="skills-tags" aria-label="Skill tags">
+              <span class="tag">Program Management</span>
+              <span class="tag">Cross-functional Leadership</span>
+              <span class="tag">Design Systems</span>
+              <span class="tag">Mobile (iOS)</span>
+              <span class="tag">Web Architecture</span>
+              <span class="tag">API / Services</span>
+              <span class="tag">Lean Six Sigma (YB)</span>
+              <span class="tag">Agile / Iterative / Waterfall</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Jira / Confluence</span>
+              <span class="tag">ServiceNow</span>
+              <span class="tag">Java</span>
+              <span class="tag">C#</span>
+              <span class="tag">Swift</span>
+              <span class="tag">AngularJS</span>
+              <span class="tag">C++</span>
+            </div>
+          </section>
+
+          <!-- Highlights with icons and full detail -->
+          <section class="highlights">
+            <h3>Highlights</h3>
+            <ul>
+              <li><span class="icon">🚀</span><div><strong>Meta (TPM, Growth • Core Product):</strong> Led delivery of 4 concurrent programs centralizing user settings across Facebook, Instagram, Oculus, and WhatsApp — global reach to <strong>2B+ users</strong>. Created the intake process and roadmaps, unified capacity planning across 5 teams, and shipped the first 5 products onto a new cross-app design system.</div></li>
+              <li><span class="icon">🎨</span><div><strong>Design System (Meta):</strong> Drove adoption from <strong>0 → 70+ products</strong> in under 2 years by demonstrating efficiency and quality benefits across partner teams; supported multiple tech stacks (VR, Web, Native).</div></li>
+              <li><span class="icon">📦</span><div><strong>Amazon (TPM, Customer Delivery Experience):</strong> Led large-scale migration of some of the most-trafficked retail pages; coordinated with <strong>10+ external teams</strong>. Owned a global tax & consumer-protection compliance effort and designed an API/service to surface complete order-total breakdowns across retail pages. Managed an intake process interfacing with <strong>100+ teams</strong>.</div></li>
+              <li><span class="icon">💼</span><div><strong>Deloitte Digital:</strong> Development lead / solution architect across iOS, Angular, and ServiceNow — including iPad apps for energy/utilities and Angular web apps for mortgage retail; built asset-management portals (1B+ assets) and Apple Watch communication apps.</div></li>
+              <li><span class="icon">🏦</span><div><strong>TD Bank:</strong> Contributed to the Mobile Wallet platform architecture; authored risk/governance assessments, service-dependency and sequence diagrams; partnered with networking/operations on Cloud POC deployments.</div></li>
+            </ul>
+          </section>
+
+          <!-- Resume link at the bottom -->
+          <section class="highlights mt-4">
+            <h3>Full Resume</h3>
+            <p>
+              For a detailed look at my career, you can view my <span aria-hidden="true">📝</span>
+              <a style="text-decoration: underline;" href="Resume.pdf" target="_blank" rel="noopener">resume</a>.
+            </p>
+            <p class="muted">PDF opens in a new tab.</p>
+          </section>
+
+          <footer>
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <a href="https://www.linkedin.com/in/alexmarian" target="_blank" rel="noopener"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                  <a href="https://www.threads.net/@alexmarian" target="_blank" rel="noopener"><img src="images/threads.svg" alt="Threads" height="14"></a>
+                  <a href="https://github.com/Alexmania" target="_blank" rel="noopener"><img src="images/github.png" alt="GitHub"></a>
+                  <a href="mailto:alex.v.marian@gmail.com"><img src="images/mail.png" alt="Email"></a>
+                  <br><br>
                 </div>
-					<div class="row">
-						<div class="col">
-							<p>You can check out my 📝<a style="text-decoration: underline;" href="Resume.pdf" target="_blank">resume</a> for my full working exprience.</p> <br><br>
-						</div>
-					</div>
-			</div>
-			<footer>
-        		<div>
-        			<div class="container">
-						<div class="row">
-							<div class="col">
-								<a href="https://www.linkedin.com/in/alexmarian" target="blank"><img src="images/linkedin.png" height="14"></a>
-								<a href="https://twitter.com/Alexmania" target="blank"><img src="images/twitter.png" height="13"></a>
-								<a href="https://github.com/Alexmania" target="blank"><img src="images/github.png" height="15"></a>
-								<a href="mailto:alex.v.marian@gmail.com"><img src="images/mail.png" height="16"></a>
-								<br>
-								<br>
-							</div>
-						</div>
-						<div class="row">
-        					<div class="col">
-        						<span>Copyright &copy; alexmarian.com</span>
-        					</div>
-					  	</div>
-        			</div>
-        		</div>
-        	</footer>
-        </div>
-		<div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <span>&copy; alexmarian.com</span>
+                </div>
+              </div>
+            </div>
+          </footer>
         </div>
       </div>
-	  
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    </div>
   </body>
 </html>

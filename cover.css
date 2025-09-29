@@ -1,94 +1,239 @@
+/* ========== Base / Theme ========== */
+:root{
+  --bg: #f9f7f4;
+  --card: #ffffff;
+  --text: #1a1a1a;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --link: #3f3f46;
+  --link-hover: #111827;
+  --accent: #b0b4b8;
 
-/*
- * Base structure
- */
+  /* Gradients */
+  --gradient-light: linear-gradient(135deg, #f9f7f4 0%, #e5e7eb 100%);
+  --gradient-card: linear-gradient(145deg, rgba(255,255,255,.70) 0%, rgba(245,246,247,.70) 100%);
+  --gradient-text: linear-gradient(120deg, #2e2e2e 0%, #4b5563 50%, #1a1a1a 100%);
 
-html,
-body {
-  height:100%;
-  /* min-height: 100%; */
-  max-height:max-content;
-  overflow-y:auto;
-  /* background-color: #344955; */
-  background: rgb(73,44,166);
-  background: linear-gradient(218deg, rgba(73,44,166,1) 47%, rgba(116,68,75,1) 100%);
-  background-size:contain;
-  background-repeat: no-repeat;
+  /* PNW mountains (light mode) */
+  --mountain-svg: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 480' preserveAspectRatio='none'>\
+  <path d='M0,320 L120,280 C240,240 480,160 720,200 C960,240 1200,320 1320,340 L1440,360 L1440,480 L0,480 Z' fill='%2376a56a' fill-opacity='0.35'/>\
+  <path d='M0,360 L200,300 C400,240 800,180 1100,260 C1300,320 1440,340 1440,360 L1440,480 L0,480 Z' fill='%235a7d5c' fill-opacity='0.45'/>\
+  <path d='M0,400 L300,340 C600,280 900,300 1200,360 L1440,400 L1440,480 L0,480 Z' fill='%23496349' fill-opacity='0.55'/>\
+</svg>");
 }
-body {
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background-image: var(--mountain-svg), var(--gradient-light);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center bottom, center top;
+  background-size: 100% 66vh, cover;
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+               Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  line-height: 1.6;
 }
 
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  display: table;
+@media (min-width: 768px){
+  html, body{ background-attachment: fixed, fixed; }
+}
+
+/* ========== Layout wrappers ========== */
+.site-wrapper{
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+.site-wrapper-inner{
+  flex: 1 0 auto;
+  display: grid;
+  place-items: start center;
+  padding: 32px 16px 24px;
+  row-gap: 20px;
+}
+.site-wrapper-inner-about{
+  flex: 1 0 auto;
+  padding: 40px 16px 20px;   /* bottom reduced from 40px to 20px */
+  max-width: 920px;
   width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
-  box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
-}
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: middle;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.site-wrapper-inner-about {
-  display: table-cell;
-  vertical-align: top;
-  padding-top: 80px;
-  padding-left: 50px;
-  padding-right: 50px;
+  margin: 0 auto;
   text-align: left;
 }
-.article{
-  vertical-align: top;
-  width: 100%;
-  padding-top: 100px;
-  /* padding-left: 50px;
-  padding-right: 50px; */
-  text-align: left;
+.article{ width: 100%; padding-top: 32px; text-align: left; }
+
+/* ========== Typography ========== */
+h1, h2, h3, h4, h5 { margin: 0 0 .5rem; letter-spacing: -0.015em; }
+h1{ font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800; }
+h2{ font-size: clamp(1.35rem, 2.3vw, 1.9rem); font-weight: 700; }
+h3{ font-size: clamp(1.05rem, 1.8vw, 1.2rem); font-weight: 600; color: var(--muted); }
+h5{ font-size: 1rem; font-weight: 600; color: var(--muted); }
+h1, h2{
+  color: transparent;
+  background-image: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
+/* ========== Links ========== */
+a, a:focus, a:hover{ color: var(--link); text-decoration: none; }
+a:hover, a:focus{ text-decoration: underline; color: var(--link-hover); }
 
+/* ========== Hero image ========== */
 .image{
-  width:200px;
-  height:200px;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 180px;
+  height: 180px;
+  border-radius: 18px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 3px 8px rgba(176,180,184,.22);
 }
-footer {
-    padding: 1em;
-    color: white;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 12px;
-    position: relative;
-    bottom: 0;
-    /* background-color: #344955; */
+
+/* ========== Cards / Containers ========== */
+.cover-container{
+  width: 100%;
+  max-width: 820px;
+  margin: 4px auto 14px;     /* bottom reduced from 28px to 14px */
+  text-align: center;
+  background: var(--gradient-card);
+  border: 1px solid rgba(226,232,240,.6);
+  border-radius: 16px;
+  padding: clamp(18px, 3vw, 28px);
+  box-shadow: 0 1px 4px rgba(0,0,0,.03), 0 6px 14px rgba(0,0,0,.05);
 }
-h1{
-    font-family: 'Nunito', sans-serif;
+@media (min-width: 768px){
+  .cover-container{ margin-top: -8px; }
 }
-h2{
-  font-family: 'Nunito', sans-serif;
-  text-align: left;
-  color: #F9AA33;
-  
+
+/* ========== Footer (dock style) ========== */
+footer{
+  margin-top: 28px;
+  padding: 12px 14px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  background: linear-gradient(135deg, #f9f7f4cc 0%, #e5e7ebcc 100%);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.05), 0 10px 30px rgba(0,0,0,.08);
 }
-h3{
-    font-family: 'Open Sans', sans-serif;
+footer img{
+  height: 18px;
+  filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(313%)
+          hue-rotate(169deg) brightness(92%) contrast(87%);
+  opacity: 0.9;
+  transition: filter .25s ease, opacity .25s ease, transform .2s ease;
 }
-h5{  
-    font-family: 'Open Sans', sans-serif;
-    color: #F9AA33;
+footer a:hover img{
+  filter: brightness(0) saturate(100%) invert(11%) sepia(12%) saturate(452%)
+          hue-rotate(170deg) brightness(95%) contrast(93%);
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* ========== Utilities ========== */
+.container{ max-width: 920px; }
+.muted{ color: var(--muted); }
+.badge{
+  display: inline-block;
+  padding: .32rem .56rem;
+  font-size: .73rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(255,255,255,.65);
+}
+
+/* ========== Mobile sticky mountains ========== */
+@media (max-width: 767.98px){
+  html, body{ background: none !important; }
+  body{ position: relative; }
+  body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-image: var(--mountain-svg), var(--gradient-light);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center bottom, center top;
+    background-size: 100% 66vh, cover;
+  }
+}
+@media (max-width: 480px){
+  .image{ width: 144px; height: 144px; border-radius: 14px; }
+  footer{ font-size: 11px; }
+  .cover-container{
+    max-width: 94%;
+    margin: 0 auto 14px;  /* keep reduced bottom spacing here too */
+    padding: 14px;
+  }
+}
+
+/* ========== Dark mode ========== */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #1c1c1a;
+    --card: #2a2a28;
+    --text: #f5f5f5;
+    --muted: #d1d5db;
+    --line: #374151;
+    --link: #d1d5db;
+    --link-hover: #ffffff;
+    --accent: #9ca3af;
+
+    --gradient-light: linear-gradient(135deg, #1c1c1a 0%, #2f2f2d 100%);
+    --gradient-card: linear-gradient(145deg, rgba(42,42,40,.70) 0%, rgba(35,35,34,.70) 100%);
+    --gradient-text: linear-gradient(120deg, #f3f4f6 0%, #e5e7eb 50%, #d1d5db 100%);
+
+    --mountain-svg: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 480' preserveAspectRatio='none'>\
+  <path d='M0,320 L120,280 C240,240 480,160 720,200 C960,240 1200,320 1320,340 L1440,360 L1440,480 L0,480 Z' fill='%233d5640' fill-opacity='0.35'/>\
+  <path d='M0,360 L200,300 C400,240 800,180 1100,260 C1300,320 1440,340 1440,360 L1440,480 L0,480 Z' fill='%232f4a32' fill-opacity='0.45'/>\
+  <path d='M0,400 L300,340 C600,280 900,300 1200,360 L1440,400 L1440,480 L0,480 Z' fill='%23253828' fill-opacity='0.55'/>\
+</svg>");
+  }
+
+  .image{ box-shadow: 0 3px 8px rgba(0,0,0,.5); }
+
+  .cover-container{
+    border-color: rgba(55,65,81,.5);
+    background: var(--gradient-card);
+  }
+
+  /* Footer matches dark dock */
+  footer{
+    background: linear-gradient(135deg, #1c1c1acc 0%, #2f2f2dcc 100%);
+    border: 1px solid #2a2a2a;
+    color: #e5e7eb;
+    box-shadow: 0 2px 6px rgba(0,0,0,.35), 0 12px 32px rgba(0,0,0,.45);
+  }
+
+  /* Footer icons lighter for dark mode */
+  footer img{
+    filter: brightness(0) saturate(100%) invert(92%) sepia(0%) saturate(7500%)
+            hue-rotate(180deg) brightness(105%) contrast(95%);
+    opacity: 0.95;
+  }
+
+  /* Dark badge pill */
+  .badge{
+    background: rgba(42,42,40,.65);
+    color: #e5e7eb;
+    border: 1px solid #4b5563;
+  }
+
+  /* Mobile sticky bg for dark mode */
+  @media (max-width: 767.98px){
+    html, body{ background: none !important; }
+    body::before{
+      background-image: var(--mountain-svg), var(--gradient-light);
+      background-position: center bottom, center top;
+      background-size: 100% 66vh, cover;
+    }
+  }
 }
