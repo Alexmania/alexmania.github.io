@@ -120,6 +120,11 @@ a:hover, a:focus{ text-decoration: underline; color: var(--link-hover); }
   display: block;
   box-shadow: 0 3px 8px rgba(176,180,184,.22);
 }
+/* Bias the crop toward the right where Alex is in the frame */
+.image--avatar{
+  aspect-ratio: 1 / 1;
+  object-position: 80% center; /* adjust 70–85% if you want more/less background */
+}
 
 /* ========== Cards / Containers ========== */
 .cover-container{
