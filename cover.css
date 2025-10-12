@@ -9,17 +9,47 @@
   --link-hover: #111827;
   --accent: #b0b4b8;
 
-  /* Gradients */
-  --gradient-light: linear-gradient(135deg, #f9f7f4 0%, #e5e7eb 100%);
+  /* Gradients (only adjusted background match) */
+  --gradient-light: linear-gradient(135deg, #f9f7f4 0%, #f9f7f4 100%);
   --gradient-card: linear-gradient(145deg, rgba(255,255,255,.70) 0%, rgba(245,246,247,.70) 100%);
   --gradient-text: linear-gradient(120deg, #2e2e2e 0%, #4b5563 50%, #1a1a1a 100%);
 
-  /* PNW mountains (light mode) */
+  /* PNW mountains — NOW with mountain ridges + tree outlines (no rect bg) */
   --mountain-svg: url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 480' preserveAspectRatio='none'>\
-  <path d='M0,320 L120,280 C240,240 480,160 720,200 C960,240 1200,320 1320,340 L1440,360 L1440,480 L0,480 Z' fill='%2376a56a' fill-opacity='0.35'/>\
-  <path d='M0,360 L200,300 C400,240 800,180 1100,260 C1300,320 1440,340 1440,360 L1440,480 L0,480 Z' fill='%235a7d5c' fill-opacity='0.45'/>\
-  <path d='M0,400 L300,340 C600,280 900,300 1200,360 L1440,400 L1440,480 L0,480 Z' fill='%23496349' fill-opacity='0.55'/>\
+  <!-- Far ridge -->\
+  <path d='M0 340 L120 300 L280 270 L420 300 L560 250 L700 290 L860 260 L1060 300 L1240 280 L1440 310 L1440 480 L0 480 Z' fill='%2376a56a' fill-opacity='0.35'/>\
+  <!-- Mid ridge -->\
+  <path d='M0 370 L160 330 L360 300 L640 340 L900 320 L1120 350 L1440 330 L1440 480 L0 480 Z' fill='%235a7d5c' fill-opacity='0.45'/>\
+  <!-- Foreground ridge -->\
+  <path d='M0 410 L220 360 L480 380 L720 350 L980 380 L1200 370 L1440 390 L1440 480 L0 480 Z' fill='%23496349' fill-opacity='0.55'/>\
+  <!-- Ridge outlines (subtle) -->\
+  <path d='M0 340 L120 300 L280 270 L420 300 L560 250 L700 290 L860 260 L1060 300 L1240 280 L1440 310' fill='none' stroke='%23496349' stroke-opacity='0.45' stroke-width='2'/>\
+  <path d='M0 370 L160 330 L360 300 L640 340 L900 320 L1120 350 L1440 330' fill='none' stroke='%233f5a40' stroke-opacity='0.5' stroke-width='2'/>\
+  <path d='M0 410 L220 360 L480 380 L720 350 L980 380 L1200 370 L1440 390' fill='none' stroke='%23344634' stroke-opacity='0.6' stroke-width='2'/>\
+  <!-- Pine tree outlines (clusters) -->\
+  <g fill='none' stroke='%233a4e3a' stroke-width='2' stroke-linejoin='round' stroke-linecap='round' opacity='0.7'>\
+    <!-- cluster A -->\
+    <path d='M120 408 l18 -34 l18 34 h-36'/>\
+    <path d='M156 412 l14 -28 l14 28 h-28'/>\
+    <path d='M186 404 l12 -24 l12 24 h-24'/>\
+    <!-- cluster B -->\
+    <path d='M360 396 l20 -38 l20 38 h-40'/>\
+    <path d='M402 404 l14 -28 l14 28 h-28'/>\
+    <path d='M430 398 l12 -24 l12 24 h-24'/>\
+    <!-- cluster C -->\
+    <path d='M720 388 l22 -42 l22 42 h-44'/>\
+    <path d='M760 396 l16 -32 l16 32 h-32'/>\
+    <path d='M792 392 l12 -24 l12 24 h-24'/>\
+    <!-- cluster D -->\
+    <path d='M1020 400 l20 -38 l20 38 h-40'/>\
+    <path d='M1060 408 l16 -32 l16 32 h-32'/>\
+    <path d='M1092 402 l12 -24 l12 24 h-24'/>\
+    <!-- cluster E -->\
+    <path d='M1280 392 l22 -42 l22 42 h-44'/>\
+    <path d='M1320 404 l16 -32 l16 32 h-32'/>\
+    <path d='M1352 398 l12 -24 l12 24 h-24'/>\
+  </g>\
 </svg>");
 }
 
@@ -56,7 +86,7 @@ html, body {
 }
 .site-wrapper-inner-about{
   flex: 1 0 auto;
-  padding: 40px 16px 20px;   /* bottom reduced from 40px to 20px */
+  padding: 40px 16px 20px;
   max-width: 920px;
   width: 100%;
   margin: 0 auto;
@@ -95,7 +125,7 @@ a:hover, a:focus{ text-decoration: underline; color: var(--link-hover); }
 .cover-container{
   width: 100%;
   max-width: 820px;
-  margin: 4px auto 14px;     /* bottom reduced from 28px to 14px */
+  margin: 4px auto 14px;
   text-align: center;
   background: var(--gradient-card);
   border: 1px solid rgba(226,232,240,.6);
@@ -169,12 +199,12 @@ footer a:hover img{
   footer{ font-size: 11px; }
   .cover-container{
     max-width: 94%;
-    margin: 0 auto 14px;  /* keep reduced bottom spacing here too */
+    margin: 0 auto 14px;
     padding: 14px;
   }
 }
 
-/* ========== Dark mode ========== */
+/* ========== Dark mode (backgrounds now match top) ========== */
 @media (prefers-color-scheme: dark){
   :root{
     --bg: #1c1c1a;
@@ -186,48 +216,69 @@ footer a:hover img{
     --link-hover: #ffffff;
     --accent: #9ca3af;
 
-    --gradient-light: linear-gradient(135deg, #1c1c1a 0%, #2f2f2d 100%);
+    --gradient-light: linear-gradient(135deg, #1c1c1a 0%, #1c1c1a 100%);
     --gradient-card: linear-gradient(145deg, rgba(42,42,40,.70) 0%, rgba(35,35,34,.70) 100%);
     --gradient-text: linear-gradient(120deg, #f3f4f6 0%, #e5e7eb 50%, #d1d5db 100%);
 
-    --mountain-svg: url("data:image/svg+xml;utf8,\
+    /* Dark variant with ridge + tree outlines */ 
+    --mountain-svg: url(\"data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 480' preserveAspectRatio='none'>\
-  <path d='M0,320 L120,280 C240,240 480,160 720,200 C960,240 1200,320 1320,340 L1440,360 L1440,480 L0,480 Z' fill='%233d5640' fill-opacity='0.35'/>\
-  <path d='M0,360 L200,300 C400,240 800,180 1100,260 C1300,320 1440,340 1440,360 L1440,480 L0,480 Z' fill='%232f4a32' fill-opacity='0.45'/>\
-  <path d='M0,400 L300,340 C600,280 900,300 1200,360 L1440,400 L1440,480 L0,480 Z' fill='%23253828' fill-opacity='0.55'/>\
-</svg>");
+  <!-- Far ridge -->\
+  <path d='M0 340 L120 300 L280 270 L420 300 L560 250 L700 290 L860 260 L1060 300 L1240 280 L1440 310 L1440 480 L0 480 Z' fill='%233d5640' fill-opacity='0.35'/>\
+  <!-- Mid ridge -->\
+  <path d='M0 370 L160 330 L360 300 L640 340 L900 320 L1120 350 L1440 330 L1440 480 L0 480 Z' fill='%232f4a32' fill-opacity='0.45'/>\
+  <!-- Foreground ridge -->\
+  <path d='M0 410 L220 360 L480 380 L720 350 L980 380 L1200 370 L1440 390 L1440 480 L0 480 Z' fill='%23253828' fill-opacity='0.55'/>\
+  <!-- Ridge outlines (subtle) -->\
+  <path d='M0 340 L120 300 L280 270 L420 300 L560 250 L700 290 L860 260 L1060 300 L1240 280 L1440 310' fill='none' stroke='%23253828' stroke-opacity='0.55' stroke-width='2'/>\
+  <path d='M0 370 L160 330 L360 300 L640 340 L900 320 L1120 350 L1440 330' fill='none' stroke='%23283b2c' stroke-opacity='0.6' stroke-width='2'/>\
+  <path d='M0 410 L220 360 L480 380 L720 350 L980 380 L1200 370 L1440 390' fill='none' stroke='%231c2a1f' stroke-opacity='0.65' stroke-width='2'/>\
+  <!-- Pine tree outlines (clusters) -->\
+  <g fill='none' stroke='%231f2c20' stroke-width='2' stroke-linejoin='round' stroke-linecap='round' opacity='0.75'>\
+    <path d='M120 408 l18 -34 l18 34 h-36'/>\
+    <path d='M156 412 l14 -28 l14 28 h-28'/>\
+    <path d='M186 404 l12 -24 l12 24 h-24'/>\
+    <path d='M360 396 l20 -38 l20 38 h-40'/>\
+    <path d='M402 404 l14 -28 l14 28 h-28'/>\
+    <path d='M430 398 l12 -24 l12 24 h-24'/>\
+    <path d='M720 388 l22 -42 l22 42 h-44'/>\
+    <path d='M760 396 l16 -32 l16 32 h-32'/>\
+    <path d='M792 392 l12 -24 l12 24 h-24'/>\
+    <path d='M1020 400 l20 -38 l20 38 h-40'/>\
+    <path d='M1060 408 l16 -32 l16 32 h-32'/>\
+    <path d='M1092 402 l12 -24 l12 24 h-24'/>\
+    <path d='M1280 392 l22 -42 l22 42 h-44'/>\
+    <path d='M1320 404 l16 -32 l16 32 h-32'/>\
+    <path d='M1352 398 l12 -24 l12 24 h-24'/>\
+  </g>\
+</svg>\");
   }
 
   .image{ box-shadow: 0 3px 8px rgba(0,0,0,.5); }
-
   .cover-container{
     border-color: rgba(55,65,81,.5);
     background: var(--gradient-card);
   }
 
-  /* Footer matches dark dock */
   footer{
-    background: linear-gradient(135deg, #1c1c1acc 0%, #2f2f2dcc 100%);
+    background: linear-gradient(135deg, #1c1c1acc 0%, #1c1c1acc 100%);
     border: 1px solid #2a2a2a;
     color: #e5e7eb;
     box-shadow: 0 2px 6px rgba(0,0,0,.35), 0 12px 32px rgba(0,0,0,.45);
   }
 
-  /* Footer icons lighter for dark mode */
   footer img{
     filter: brightness(0) saturate(100%) invert(92%) sepia(0%) saturate(7500%)
             hue-rotate(180deg) brightness(105%) contrast(95%);
     opacity: 0.95;
   }
 
-  /* Dark badge pill */
   .badge{
     background: rgba(42,42,40,.65);
     color: #e5e7eb;
     border: 1px solid #4b5563;
   }
 
-  /* Mobile sticky bg for dark mode */
   @media (max-width: 767.98px){
     html, body{ background: none !important; }
     body::before{
