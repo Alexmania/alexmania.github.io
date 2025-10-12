@@ -60,7 +60,7 @@ html, body {
   background-image: var(--mountain-svg), var(--gradient-light);
   background-repeat: no-repeat, no-repeat;
   background-position: center bottom, center top;
-  background-size: 100% 66vh, cover;
+  background-size: 100% 100vh, cover; /* ↑ taller mountains */
   color: var(--text);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
                Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
@@ -196,7 +196,7 @@ footer a:hover img{
     background-image: var(--mountain-svg), var(--gradient-light);
     background-repeat: no-repeat, no-repeat;
     background-position: center bottom, center top;
-    background-size: 100% 66vh, cover;
+    background-size: 100% 100vh, cover; /* ↑ taller mountains */
   }
 }
 @media (max-width: 480px){
@@ -289,7 +289,7 @@ footer a:hover img{
     body::before{
       background-image: var(--mountain-svg), var(--gradient-light);
       background-position: center bottom, center top;
-      background-size: 100% 66vh, cover;
+      background-size: 100% 100vh, cover; /* ↑ taller mountains */
     }
   }
 }
