@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="images/tech.png" hreflang="en-us" />
+    <title>Alex Marian / Case Studies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Selected program case studies from Alex Marian — complex, cross-functional delivery at Meta and Amazon." />
+    <link href="cover.css" rel="stylesheet" />
+    <link href="menu.css" rel="stylesheet" />
+    <style>
+      .highlights { text-align: left; margin-top: 16px; }
+      .highlights h3 { margin-top: 0; margin-bottom: 8px; }
+      .case-study { margin-bottom: 40px; }
+      .case-study h3 { margin-bottom: 4px; }
+      .case-study .role { color: var(--muted, #6c757d); font-size: 0.95rem; margin-bottom: 12px; }
+      .case-study h4 { margin: 16px 0 6px; font-size: 1.05rem; }
+      .case-study p, .case-study ul { margin-top: 6px; }
+      .case-study ul { padding-left: 1.1rem; }
+      .case-study li { margin-bottom: 8px; }
+      .skills-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+      .skills-tags .tag {
+        font-size: 0.8rem; line-height: 1; padding: .4rem .6rem; border-radius: 999px;
+        border: 1px solid var(--accent); background: rgba(255,255,255,.65); color: var(--link); white-space: nowrap;
+      }
+      @media (prefers-color-scheme: dark){
+        .skills-tags .tag { background: rgba(42,42,40,.65); color: var(--text); }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header" role="navigation" aria-label="Primary">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="case-studies.html" aria-current="page">Case Studies</a></li>
+      </ul>
+    </header>
+
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner-about">
+        <div class="cover-container">
+          <h2>Case Studies</h2>
+          <p class="muted" style="text-align: left;">A few programs that show how I work: navigating ambiguity, aligning large cross-functional groups, and shipping complex efforts to real users.</p>
+
+          <!-- Case Study 1 -->
+          <section class="highlights case-study">
+            <h3>Centralizing user settings across Meta's family of apps</h3>
+            <div class="role">Technical Program Manager, Growth &bull; Core Product — Meta</div>
+            <div class="skills-tags" aria-label="Program stats">
+              <span class="tag">4 concurrent programs</span>
+              <span class="tag">2B+ users reached</span>
+              <span class="tag">5 teams aligned</span>
+              <span class="tag">Facebook &bull; Instagram &bull; Oculus &bull; WhatsApp</span>
+            </div>
+            <h4>The challenge</h4>
+            <p>
+              User settings lived in four different apps, each with its own teams, roadmaps, and technical constraints.
+              Centralizing them meant coordinating parallel workstreams across Facebook, Instagram, Oculus, and WhatsApp —
+              without breaking the release trains of products used by billions of people.
+            </p>
+            <h4>What I owned</h4>
+            <ul>
+              <li>Created the intake process and program roadmaps, giving every incoming request a clear path from proposal to prioritized plan.</li>
+              <li>Unified capacity planning across 5 teams so dependencies surfaced early instead of at integration time.</li>
+              <li>Drove cross-app alignment on priorities, sequencing, and launch readiness across engineering, product, and design.</li>
+            </ul>
+            <h4>Outcome</h4>
+            <p>
+              Shipped the first 5 products onto a new cross-app design system and delivered centralized settings experiences
+              to a global audience of 2B+ users — with the intake and planning machinery in place to keep the program running.
+            </p>
+          </section>
+
+          <!-- Case Study 2 -->
+          <section class="highlights case-study">
+            <h3>Taking a design system from 0 to 70+ products</h3>
+            <div class="role">Technical Program Manager — Meta</div>
+            <div class="skills-tags" aria-label="Program stats">
+              <span class="tag">0 → 70+ products</span>
+              <span class="tag">Under 2 years</span>
+              <span class="tag">VR &bull; Web &bull; Native stacks</span>
+            </div>
+            <h4>The challenge</h4>
+            <p>
+              A new cross-app design system is only as good as its adoption. Partner teams had working solutions and little
+              incentive to migrate — the system had to earn its place on technical merit and proven value, across VR, web,
+              and native stacks.
+            </p>
+            <h4>What I owned</h4>
+            <ul>
+              <li>Partnered with teams to demonstrate concrete efficiency and quality benefits of adopting the system, rather than mandating it.</li>
+              <li>Supported adoption across multiple tech stacks, removing the integration blockers unique to each platform.</li>
+              <li>Tracked and communicated adoption progress to build momentum — early wins made the next teams easier to bring on board.</li>
+            </ul>
+            <h4>Outcome</h4>
+            <p>
+              Drove adoption from zero to 70+ products in under two years, establishing the design system as the default
+              foundation for cross-app experiences.
+            </p>
+          </section>
+
+          <!-- Case Study 3 -->
+          <section class="highlights case-study">
+            <h3>Large-scale retail migration &amp; global compliance at Amazon</h3>
+            <div class="role">Technical Program Manager, Customer Delivery Experience — Amazon</div>
+            <div class="skills-tags" aria-label="Program stats">
+              <span class="tag">10+ external teams</span>
+              <span class="tag">100+ teams via intake</span>
+              <span class="tag">Global tax &amp; consumer-protection compliance</span>
+            </div>
+            <h4>The challenge</h4>
+            <p>
+              Migrating some of the most-trafficked retail pages on the internet while simultaneously meeting global tax and
+              consumer-protection compliance requirements — with over a hundred teams interfacing through a single intake process.
+            </p>
+            <h4>What I owned</h4>
+            <ul>
+              <li>Led the large-scale migration effort, coordinating with 10+ external teams on sequencing, dependencies, and cutover.</li>
+              <li>Owned the global tax &amp; consumer-protection compliance effort end to end.</li>
+              <li>Designed an API/service to surface complete order-total breakdowns consistently across retail pages.</li>
+              <li>Managed the intake process interfacing with 100+ teams, keeping requests triaged, prioritized, and visible.</li>
+            </ul>
+            <h4>Outcome</h4>
+            <p>
+              Delivered the migration and the compliance program on track, with a shared API for order-total transparency
+              and an intake process that scaled to triple-digit team participation.
+            </p>
+          </section>
+
+          <footer>
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <a href="https://www.linkedin.com/in/alexmarian" target="_blank" rel="noopener"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                  <a href="https://www.threads.net/@alexmarian.me" target="_blank" rel="noopener"><img src="images/threads.svg" alt="Threads" height="14"></a>
+                  <a href="https://github.com/Alexmania" target="_blank" rel="noopener"><img src="images/github.png" alt="GitHub"></a>
+                  <a href="mailto:alex.v.marian@gmail.com"><img src="images/mail.png" alt="Email"></a>
+                  <br><br>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <span>&copy; alexmarian.com</span>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
