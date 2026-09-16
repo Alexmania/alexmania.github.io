@@ -14,53 +14,19 @@
   --gradient-card: linear-gradient(145deg, rgba(255,255,255,.70) 0%, rgba(245,246,247,.70) 100%);
   --gradient-text: linear-gradient(120deg, #2e2e2e 0%, #4b5563 50%, #1a1a1a 100%);
 
-  /* PNW mountains — NOW with mountain ridges + tree outlines (no rect bg) */
-  --mountain-svg: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 480' preserveAspectRatio='none'>\
-  <!-- Far ridge -->\
-  <path d='M0 340 L120 300 L280 270 L420 300 L560 250 L700 290 L860 260 L1060 300 L1240 280 L1440 310 L1440 480 L0 480 Z' fill='%2376a56a' fill-opacity='0.35'/>\
-  <!-- Mid ridge -->\
-  <path d='M0 370 L160 330 L360 300 L640 340 L900 320 L1120 350 L1440 330 L1440 480 L0 480 Z' fill='%235a7d5c' fill-opacity='0.45'/>\
-  <!-- Foreground ridge -->\
-  <path d='M0 410 L220 360 L480 380 L720 350 L980 380 L1200 370 L1440 390 L1440 480 L0 480 Z' fill='%23496349' fill-opacity='0.55'/>\
-  <!-- Ridge outlines (subtle) -->\
-  <path d='M0 340 L120 300 L280 270 L420 300 L560 250 L700 290 L860 260 L1060 300 L1240 280 L1440 310' fill='none' stroke='%23496349' stroke-opacity='0.45' stroke-width='2'/>\
-  <path d='M0 370 L160 330 L360 300 L640 340 L900 320 L1120 350 L1440 330' fill='none' stroke='%233f5a40' stroke-opacity='0.5' stroke-width='2'/>\
-  <path d='M0 410 L220 360 L480 380 L720 350 L980 380 L1200 370 L1440 390' fill='none' stroke='%23344634' stroke-opacity='0.6' stroke-width='2'/>\
-  <!-- Pine tree outlines (clusters) -->\
-  <g fill='none' stroke='%233a4e3a' stroke-width='2' stroke-linejoin='round' stroke-linecap='round' opacity='0.7'>\
-    <!-- cluster A -->\
-    <path d='M120 408 l18 -34 l18 34 h-36'/>\
-    <path d='M156 412 l14 -28 l14 28 h-28'/>\
-    <path d='M186 404 l12 -24 l12 24 h-24'/>\
-    <!-- cluster B -->\
-    <path d='M360 396 l20 -38 l20 38 h-40'/>\
-    <path d='M402 404 l14 -28 l14 28 h-28'/>\
-    <path d='M430 398 l12 -24 l12 24 h-24'/>\
-    <!-- cluster C -->\
-    <path d='M720 388 l22 -42 l22 42 h-44'/>\
-    <path d='M760 396 l16 -32 l16 32 h-32'/>\
-    <path d='M792 392 l12 -24 l12 24 h-24'/>\
-    <!-- cluster D -->\
-    <path d='M1020 400 l20 -38 l20 38 h-40'/>\
-    <path d='M1060 408 l16 -32 l16 32 h-32'/>\
-    <path d='M1092 402 l12 -24 l12 24 h-24'/>\
-    <!-- cluster E -->\
-    <path d='M1280 392 l22 -42 l22 42 h-44'/>\
-    <path d='M1320 404 l16 -32 l16 32 h-32'/>\
-    <path d='M1352 398 l12 -24 l12 24 h-24'/>\
-  </g>\
-</svg>");
+  /* PNW mountains — photographic Cascade backdrop */
+  --mountain-photo: url("images/pnw_mountains_bg.jpg");
+  --mountain-overlay: linear-gradient(180deg, rgba(249,247,244,.90) 0%, rgba(249,247,244,.55) 45%, rgba(249,247,244,.22) 100%);
 }
 
 * { box-sizing: border-box; }
 
 html, body {
   height: 100%;
-  background-image: var(--mountain-svg), var(--gradient-light);
-  background-repeat: no-repeat, no-repeat;
-  background-position: center bottom, center top;
-  background-size: 100% 100vh, cover; /* ↑ taller mountains */
+  background-image: var(--mountain-overlay), var(--mountain-photo), var(--gradient-light);
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: center top, center bottom, center top;
+  background-size: cover, cover, cover;
   color: var(--text);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
                Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
@@ -193,10 +159,10 @@ footer a:hover img{
     inset: 0;
     pointer-events: none;
     z-index: -1;
-    background-image: var(--mountain-svg), var(--gradient-light);
-    background-repeat: no-repeat, no-repeat;
-    background-position: center bottom, center top;
-    background-size: 100% 100vh, cover; /* ↑ taller mountains */
+    background-image: var(--mountain-overlay), var(--mountain-photo), var(--gradient-light);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: center top, center bottom, center top;
+    background-size: cover, cover, cover;
   }
 }
 @media (max-width: 480px){
@@ -225,38 +191,9 @@ footer a:hover img{
     --gradient-card: linear-gradient(145deg, rgba(42,42,40,.70) 0%, rgba(35,35,34,.70) 100%);
     --gradient-text: linear-gradient(120deg, #f3f4f6 0%, #e5e7eb 50%, #d1d5db 100%);
 
-    /* Dark variant with ridge + tree outlines */ 
-    --mountain-svg: url(\"data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 480' preserveAspectRatio='none'>\
-  <!-- Far ridge -->\
-  <path d='M0 340 L120 300 L280 270 L420 300 L560 250 L700 290 L860 260 L1060 300 L1240 280 L1440 310 L1440 480 L0 480 Z' fill='%233d5640' fill-opacity='0.35'/>\
-  <!-- Mid ridge -->\
-  <path d='M0 370 L160 330 L360 300 L640 340 L900 320 L1120 350 L1440 330 L1440 480 L0 480 Z' fill='%232f4a32' fill-opacity='0.45'/>\
-  <!-- Foreground ridge -->\
-  <path d='M0 410 L220 360 L480 380 L720 350 L980 380 L1200 370 L1440 390 L1440 480 L0 480 Z' fill='%23253828' fill-opacity='0.55'/>\
-  <!-- Ridge outlines (subtle) -->\
-  <path d='M0 340 L120 300 L280 270 L420 300 L560 250 L700 290 L860 260 L1060 300 L1240 280 L1440 310' fill='none' stroke='%23253828' stroke-opacity='0.55' stroke-width='2'/>\
-  <path d='M0 370 L160 330 L360 300 L640 340 L900 320 L1120 350 L1440 330' fill='none' stroke='%23283b2c' stroke-opacity='0.6' stroke-width='2'/>\
-  <path d='M0 410 L220 360 L480 380 L720 350 L980 380 L1200 370 L1440 390' fill='none' stroke='%231c2a1f' stroke-opacity='0.65' stroke-width='2'/>\
-  <!-- Pine tree outlines (clusters) -->\
-  <g fill='none' stroke='%231f2c20' stroke-width='2' stroke-linejoin='round' stroke-linecap='round' opacity='0.75'>\
-    <path d='M120 408 l18 -34 l18 34 h-36'/>\
-    <path d='M156 412 l14 -28 l14 28 h-28'/>\
-    <path d='M186 404 l12 -24 l12 24 h-24'/>\
-    <path d='M360 396 l20 -38 l20 38 h-40'/>\
-    <path d='M402 404 l14 -28 l14 28 h-28'/>\
-    <path d='M430 398 l12 -24 l12 24 h-24'/>\
-    <path d='M720 388 l22 -42 l22 42 h-44'/>\
-    <path d='M760 396 l16 -32 l16 32 h-32'/>\
-    <path d='M792 392 l12 -24 l12 24 h-24'/>\
-    <path d='M1020 400 l20 -38 l20 38 h-40'/>\
-    <path d='M1060 408 l16 -32 l16 32 h-32'/>\
-    <path d='M1092 402 l12 -24 l12 24 h-24'/>\
-    <path d='M1280 392 l22 -42 l22 42 h-44'/>\
-    <path d='M1320 404 l16 -32 l16 32 h-32'/>\
-    <path d='M1352 398 l12 -24 l12 24 h-24'/>\
-  </g>\
-</svg>\");
+    /* PNW mountains — photographic Cascade backdrop (dark) */
+  --mountain-photo: url("images/pnw_mountains_bg.jpg");
+  --mountain-overlay: linear-gradient(180deg, rgba(28,28,26,.92) 0%, rgba(28,28,26,.62) 45%, rgba(28,28,26,.30) 100%);
   }
 
   .image{ box-shadow: 0 3px 8px rgba(0,0,0,.5); }
@@ -287,9 +224,9 @@ footer a:hover img{
   @media (max-width: 767.98px){
     html, body{ background: none !important; }
     body::before{
-      background-image: var(--mountain-svg), var(--gradient-light);
-      background-position: center bottom, center top;
-      background-size: 100% 100vh, cover; /* ↑ taller mountains */
+      background-image: var(--mountain-overlay), var(--mountain-photo), var(--gradient-light);
+      background-position: center top, center bottom, center top;
+      background-size: cover, cover, cover;
     }
   }
 }
