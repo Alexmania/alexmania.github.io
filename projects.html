@@ -23,6 +23,17 @@
       @media (prefers-color-scheme: dark){
         .skills-tags .tag { background: rgba(42,42,40,.65); color: var(--text); }
       }
+      .project-cards { display: grid; gap: 20px; margin-top: 16px; text-align: left; }
+      .project-card { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--card); }
+      .project-card a.preview { display: block; }
+      .project-card img.preview { width: 100%; height: auto; display: block; }
+      .project-card .body { padding: 14px 18px 18px; }
+      .project-card h4 { margin: 0 0 6px; font-size: 1.1rem; }
+      .project-card h4 a { color: var(--text); text-decoration: none; }
+      .project-card h4 a:hover { text-decoration: underline; }
+      .project-card p { margin: 0; }
+      .btn-link { display: inline-block; margin-top: 12px; padding: .55rem 1.1rem; border-radius: 999px; background: var(--text); color: var(--bg); text-decoration: none; font-weight: 600; }
+      .btn-link:hover { opacity: .85; }
     </style>
   </head>
   <body>
@@ -39,14 +50,27 @@
       <div class="site-wrapper-inner-about">
         <div class="cover-container">
           <h2>Projects</h2>
+          <p class="muted">Things I’ve built with AI.</p>
 
-          <section class="highlights">
-            <h3>Built with AI</h3>
-            <ul>
-              <li><span class="icon">📚</span><div><strong>Colin &amp; Maddy’s Storybook Library:</strong> A new picture book for my kids every night — written, illustrated, and narrated with AI, then published to a library site where they can pick a book and press Listen for read-aloud narration. 80+ books and counting. <a style="text-decoration: underline;" href="https://alexmarian.com/colin-maddy-storybooks/" target="_blank" rel="noopener">Visit the library</a>.</div></li>
-              <li><span class="icon">🚒</span><div><strong>Colin’s Truck Coloring Pages:</strong> An ever-growing archive of AI-drawn coloring pages for my son — fire trucks, tow trucks, monster trucks, and more, each with its own scene. New sketches are generated twice a day, and every page can be downloaded and printed. <a style="text-decoration: underline;" href="https://alexmarian.com/colin-truck-sketches/" target="_blank" rel="noopener">Browse the coloring pages</a>.</div></li>
-            </ul>
-          </section>
+          <div class="project-cards">
+            <article class="project-card">
+              <a class="preview" href="https://alexmarian.com/colin-maddy-storybooks/" target="_blank" rel="noopener"><img class="preview" src="https://alexmarian.com/colin-maddy-storybooks/books/colin-and-maddy-s-great-splash-park-rescue/images/p01.webp" alt="Illustrated cover of a Colin and Maddy storybook" loading="lazy" /></a>
+              <div class="body">
+                <h4><span aria-hidden="true">📚</span> <a href="https://alexmarian.com/colin-maddy-storybooks/" target="_blank" rel="noopener">Colin &amp; Maddy’s Storybook Library</a></h4>
+                <p>A new picture book for my kids every night — written, illustrated, and narrated with AI, then published to a library site where they can pick a book and press Listen for read-aloud narration. 80+ books and counting.</p>
+                <a class="btn-link" href="https://alexmarian.com/colin-maddy-storybooks/" target="_blank" rel="noopener">Visit the library →</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <a class="preview" href="https://alexmarian.com/colin-truck-sketches/" target="_blank" rel="noopener"><img class="preview" src="https://alexmarian.com/colin-truck-sketches/thumbs/media-generation-coloring2o-ladder-downtown-0-06345e8a-82f6-4a47-818a-ec0adde19944.webp.jpg" alt="Black-and-white coloring page of a big ladder fire truck in a downtown street" loading="lazy" /></a>
+              <div class="body">
+                <h4><span aria-hidden="true">🚒</span> <a href="https://alexmarian.com/colin-truck-sketches/" target="_blank" rel="noopener">Colin’s Truck Coloring Pages</a></h4>
+                <p>An ever-growing archive of AI-drawn coloring pages for my son — fire trucks, tow trucks, monster trucks, and more, each with its own scene. New sketches are generated twice a day, and every page can be downloaded and printed.</p>
+                <a class="btn-link" href="https://alexmarian.com/colin-truck-sketches/" target="_blank" rel="noopener">Browse the coloring pages →</a>
+              </div>
+            </article>
+          </div>
 
           <footer>
             <div class="container">
