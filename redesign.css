@@ -30,6 +30,7 @@ a:hover{ text-decoration: underline; }
 /* ========== Nav ========== */
 .nav{
   position: sticky; top: 0; z-index: 50;
+  background: var(--bg);
   background: color-mix(in srgb, var(--bg) 82%, transparent);
   backdrop-filter: saturate(150%) blur(12px);
   -webkit-backdrop-filter: saturate(150%) blur(12px);
@@ -45,6 +46,10 @@ a:hover{ text-decoration: underline; }
 .nav a{ color: var(--ink); font-size: .95rem; font-weight: 550; }
 .nav a:hover{ color: var(--pine); text-decoration: none; }
 .nav a[aria-current="page"]{ color: var(--pine); border-bottom: 2px solid var(--pine); padding-bottom: 2px; }
+@media (max-width: 560px){
+  .nav-inner{ flex-wrap: wrap; justify-content: center; row-gap: 6px; padding: 10px 16px 12px; }
+  .nav ul{ gap: 18px; }
+}
 
 /* ========== Hero (home) ========== */
 .hero{
