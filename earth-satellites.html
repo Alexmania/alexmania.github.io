@@ -412,7 +412,7 @@
         <p>Every dot is a real, currently active satellite. The catalog is the complete NORAD active-satellite list published by CelesTrak — <span id="aboutCount">—</span> objects including the ISS, Tiangong, Hubble, the GPS / Galileo / GLONASS / BeiDou navigation fleets, weather satellites, and the full Starlink and OneWeb constellations.</p>
         <p><b>How positions work:</b> each satellite ships with its two-line element set (TLE). Your browser propagates those elements with a Keplerian orbit model, so positions, altitude, velocity, latitude and longitude are computed live for the current time — drag the time controls forward and the whole sky moves with them.</p>
         <ul>
-          <li><b>Drag</b> to rotate, <b>scroll / pinch</b> to zoom, <b>right-drag</b> to pan.</li>
+          <li><b>Drag</b> to rotate around Earth, <b>scroll / pinch</b> to zoom.</li>
           <li><b>Continents stay readable everywhere</b> — the globe is lit brightly on both the day and night sides, with coastline outlines, a lat/lon grid and continent labels on by default. Use “Hide all” to clear satellites out of the way entirely.</li>
           <li><b>Your location</b> is the pulsing gold pin at Mukilteo, WA (47.91° N, 122.30° W) on the US West Coast — use “Fly to my location” in the panel to jump straight to it.</li>
           <li><b>Click</b> any satellite to see its details, orbit path and ground track.</li>
@@ -642,7 +642,7 @@
       ctx.fillText(text, w/2, h/2 + 3);
       var tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4;
       var sp = new THREE.Sprite(new THREE.SpriteMaterial({ map:tex, transparent:true, opacity:0, depthWrite:false }));
-      var k = 0.00155;
+      var k = 0.00100;
       sp.scale.set(w*k, h*k, 1);
       return sp;
     }
@@ -680,7 +680,7 @@
       ctx.fillText(text, w/2, h/2 + 3);
       var tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4;
       var sp = new THREE.Sprite(new THREE.SpriteMaterial({ map:tex, transparent:true, depthTest:false }));
-      var k = 0.00155;
+      var k = 0.00095;
       sp.scale.set(w*k, h*k, 1);
       sp.renderOrder = 20;
       return sp;
@@ -709,10 +709,11 @@
       camera.position.copy(HOME_POS);
 
       controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.target.set(0, 0, 0);         // always orbit around Earth's centre, never a surface point
+      controls.enablePan = false;           // panning would move the pivot off Earth — rotation stays centred
       controls.enableDamping = true; controls.dampingFactor = 0.085;
       controls.rotateSpeed = 1.35;          // shorter drags turn the globe further
       controls.zoomSpeed = 1.15;
-      controls.panSpeed = 0.85;
       controls.minDistance = 1.3; controls.maxDistance = 90;
       controls.autoRotate = false; controls.autoRotateSpeed = 0.55;
       controls.addEventListener('start', function(){ cancelTween(); });
@@ -801,7 +802,7 @@
       var homeSurf = latLonToScene(HOME_LAT, HOME_LON, 1.0);
       var homeOut = homeSurf.clone().normalize();
       homeDot = new THREE.Sprite(new THREE.SpriteMaterial({ map:makeHomeDotTexture(), transparent:true, depthTest:true }));
-      homeDot.scale.set(0.16, 0.16, 1);
+      homeDot.scale.set(0.115, 0.115, 1);
       homeDot.position.copy(latLonToScene(HOME_LAT, HOME_LON, 1.015));
       homeDot.renderOrder = 12;
       homeGroup.add(homeDot);
@@ -1188,7 +1189,10 @@
       var surf = latLonToScene(HOME_LAT, HOME_LON, 1.0);
       var out = surf.clone().normalize();
       var camPos = out.clone().multiplyScalar(2.55).add(new THREE.Vector3(0, 0.35, 0));
-      flyCamera(camPos, surf.clone().multiplyScalar(0.92), 1200);
+      // Point the camera at Mukilteo, but keep the orbit pivot at Earth's
+      // centre (0,0,0) so dragging afterwards rotates around the Earth,
+      // not around the Mukilteo surface point.
+      flyCamera(camPos, new THREE.Vector3(0, 0, 0), 1200);
     }
     function snapToSatellite(i){
       var p = satScenePos(i, new THREE.Vector3());
@@ -1307,8 +1311,8 @@
         var toCam = camera.position.clone().sub(hp).normalize();
         var facing = hp.clone().normalize().dot(toCam); // 1 = facing camera, <0 = far side
         var vis = THREE.MathUtils.clamp((facing + 0.12) / 0.35, 0, 1);
-        var pulse2 = 0.11 + (Math.sin(now * 0.004) * 0.5 + 0.5) * 0.055;
-        if (homeRing){ homeRing.scale.set(pulse2 + 0.05, pulse2 + 0.05, 1); homeRing.material.opacity = 0.95 * vis; homeRing.visible = vis > 0.02; }
+        var pulse2 = 0.07 + (Math.sin(now * 0.004) * 0.5 + 0.5) * 0.035;
+        if (homeRing){ homeRing.scale.set(pulse2 + 0.035, pulse2 + 0.035, 1); homeRing.material.opacity = 0.95 * vis; homeRing.visible = vis > 0.02; }
         if (homeDot){ homeDot.material.opacity = vis; homeDot.visible = vis > 0.02; }
         if (homeBeam){ homeBeam.material.opacity = 0.85 * vis; homeBeam.visible = vis > 0.02; }
         if (homeLabel){ homeLabel.material.opacity = vis; homeLabel.visible = vis > 0.05; }
