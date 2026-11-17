@@ -1,121 +1,115 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="images/tech.png" hreflang="en-us" />
-    <title>Alex Marian / Projects</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="description" content="Projects by Alex Marian — things built with AI, including nightly storybooks and coloring pages for my kids." />
-    <!-- Keep CSS minimal for speed -->
-    <link href="cover.css" rel="stylesheet" />
-    <link href="menu.css" rel="stylesheet" />
-    <style>
-      .highlights { text-align: left; margin-top: 16px; }
-      .highlights h3 { margin-top: 0; margin-bottom: 8px; }
-      .highlights ul { margin: 0; padding-left: 1.1rem; list-style: none; }
-      .highlights li { margin-bottom: 12px; display: flex; align-items: flex-start; }
-      .highlights li span.icon { margin-right: 8px; font-size: 1.2rem; line-height: 1.4; flex-shrink: 0; }
-      .skills-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-      .skills-tags .tag {
-        font-size: 0.8rem; line-height: 1; padding: .4rem .6rem; border-radius: 999px;
-        border: 1px solid var(--accent); background: rgba(255,255,255,.65); color: var(--link); white-space: nowrap;
-      }
-      @media (prefers-color-scheme: dark){
-        .skills-tags .tag { background: rgba(42,42,40,.65); color: var(--text); }
-      }
-      .project-cards { display: grid; gap: 16px; margin-top: 16px; text-align: left; }
-      .project-card { display: flex; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--card); }
-      .project-card a.preview { flex: 0 0 190px; display: block; }
-      .project-card img.preview { width: 100%; height: 100%; object-fit: cover; display: block; }
-      .project-card .body { padding: 14px 18px 18px; flex: 1; }
-      @media (max-width: 560px) {
-        .project-card { flex-direction: column; }
-        .project-card a.preview { flex: none; }
-        .project-card img.preview { height: 150px; }
-      }
-      .project-card h4 { margin: 0 0 6px; font-size: 1.1rem; }
-      .project-card h4 a { color: var(--text); text-decoration: none; }
-      .project-card h4 a:hover { text-decoration: underline; }
-      .project-card p { margin: 0; }
-      .btn-link { display: inline-block; margin-top: 12px; padding: .55rem 1.1rem; border-radius: 999px; background: var(--text); color: var(--bg); text-decoration: none; font-weight: 600; }
-      .btn-link:hover { opacity: .85; }
-    </style>
-  </head>
-  <body>
-    <header class="header" role="navigation" aria-label="Primary">
-      <ul class="menu">
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Projects — Alex Marian</title>
+<meta name="description" content="Projects by Alex Marian — things built with AI, from nightly storybooks for his kids to a real-time 3D map of every satellite around Earth.">
+<link rel="canonical" href="https://alexmarian.com/projects.html">
+<link rel="icon" type="image/png" href="images/tech.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Projects — Alex Marian">
+<meta property="og:description" content="Things built with AI — storybooks, coloring pages, a 3D fire truck simulator, and a live satellite map.">
+<meta property="og:url" content="https://alexmarian.com/projects.html">
+<meta property="og:image" content="https://alexmarian.com/images/earth-satellites.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Projects — Alex Marian">
+<meta name="twitter:description" content="Things built with AI — storybooks, coloring pages, a 3D fire truck simulator, and a live satellite map.">
+<meta name="twitter:image" content="https://alexmarian.com/images/earth-satellites.jpg">
+<link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="mist-machine.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Alex Marian</a>
+    <nav aria-label="Primary">
+      <button class="icon-btn menu-btn" type="button" data-menu-button aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">Menu</button>
+      <ul class="nav-list" id="primary-nav" data-open="false">
+        <li><button class="icon-btn nav-close" type="button" data-menu-close aria-label="Close menu">Close ✕</button></li>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="experience.html">Experience</a></li>
         <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="Resume.pdf">Résumé</a></li>
       </ul>
-    </header>
-
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner-about">
-        <div class="cover-container">
-          <h2>Projects</h2>
-          <p class="muted">Things I’ve built with AI.</p>
-
-          <div class="project-cards">
-            <article class="project-card">
-              <a class="preview" href="https://alexmarian.com/colin-maddy-storybooks/" target="_blank" rel="noopener"><img class="preview" src="https://alexmarian.com/colin-maddy-storybooks/books/colin-and-maddy-s-great-splash-park-rescue/images/p01.webp" alt="Illustrated cover of a Colin and Maddy storybook" loading="lazy" /></a>
-              <div class="body">
-                <h4><span aria-hidden="true">📚</span> <a href="https://alexmarian.com/colin-maddy-storybooks/" target="_blank" rel="noopener">Colin &amp; Maddy’s Storybook Library</a></h4>
-                <p>A new picture book for my kids every night — written, illustrated, and narrated with AI, then published to a library site where they can pick a book and press Listen for read-aloud narration. 80+ books and counting.</p>
-                <a class="btn-link" href="https://alexmarian.com/colin-maddy-storybooks/" target="_blank" rel="noopener">Visit the library →</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <a class="preview" href="https://alexmarian.com/colin-truck-sketches/" target="_blank" rel="noopener"><img class="preview" src="https://alexmarian.com/colin-truck-sketches/thumbs/media-generation-coloring2o-ladder-downtown-0-06345e8a-82f6-4a47-818a-ec0adde19944.webp.jpg" alt="Black-and-white coloring page of a big ladder fire truck in a downtown street" loading="lazy" /></a>
-              <div class="body">
-                <h4><span aria-hidden="true">🚒</span> <a href="https://alexmarian.com/colin-truck-sketches/" target="_blank" rel="noopener">Colin’s Truck Coloring Pages</a></h4>
-                <p>An ever-growing archive of AI-drawn coloring pages for my son — fire trucks, tow trucks, monster trucks, and more, each with its own scene. New sketches are generated twice a day, and every page can be downloaded and printed.</p>
-                <a class="btn-link" href="https://alexmarian.com/colin-truck-sketches/" target="_blank" rel="noopener">Browse the coloring pages →</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <a class="preview" href="https://muse.ai/s/fire-truck-simulator-3d-zp6xixqyxv2cxw9/KcFt6oIByuo3UZNNlL6kM0bhjY-hyx6yK62PUvYOKhg" target="_blank" rel="noopener"><img class="preview" src="images/fire-truck-simulator.jpg" alt="3D fire truck simulator game — red fire engine driving out of Station 7" loading="lazy" /></a>
-              <div class="body">
-                <h4><span aria-hidden="true">🚒</span> <a href="https://muse.ai/s/fire-truck-simulator-3d-zp6xixqyxv2cxw9/KcFt6oIByuo3UZNNlL6kM0bhjY-hyx6yK62PUvYOKhg" target="_blank" rel="noopener">Fire Truck Simulator 3D</a></h4>
-                <p>Drive Engine 7 around a 3D town as Captain Alex, answer Dispatcher Rosa's emergency calls, and put out fires with a mouse-aimed water hose. Eleven missions plus Free Roam, four trucks to drive — pumper, ladder, brush pickup, and command SUV — with realistic sirens and engine sounds. Playable in the browser with keyboard and mouse.</p>
-                <a class="btn-link" href="https://muse.ai/s/fire-truck-simulator-3d-zp6xixqyxv2cxw9/KcFt6oIByuo3UZNNlL6kM0bhjY-hyx6yK62PUvYOKhg" target="_blank" rel="noopener">Play the game →</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <a class="preview" href="https://alexmarian.com/earth-satellites.html" target="_blank" rel="noopener"><img class="preview" src="images/earth-satellites.jpg" alt="3D Earth from space surrounded by thousands of satellites" loading="lazy" /></a>
-              <div class="body">
-                <h4><span aria-hidden="true">🛰️</span> <a href="https://alexmarian.com/earth-satellites.html" target="_blank" rel="noopener">Earth Satellites</a></h4>
-                <p>A real-time 3D Earth you can spin and zoom, surrounded by all 15,860 active satellites — from the ISS and Hubble to the full Starlink constellation. Click any satellite for its altitude, speed, and orbit path, or hide them all to see the continents on a daylight map.</p>
-                <a class="btn-link" href="https://alexmarian.com/earth-satellites.html" target="_blank" rel="noopener">Explore the satellites →</a>
-              </div>
-            </article>
-          </div>
-
-          <footer>
-            <div class="container">
-              <div class="row">
-                <div class="col">
-                  <a href="https://www.linkedin.com/in/alexmarian" target="_blank" rel="noopener"><img src="images/linkedin.png" alt="LinkedIn"></a>
-                  <a href="https://www.threads.net/@alexmarian.me" target="_blank" rel="noopener"><img src="images/threads.svg" alt="Threads" height="14"></a>
-                  <a href="https://github.com/Alexmania" target="_blank" rel="noopener"><img src="images/github.png" alt="GitHub"></a>
-                  <a href="mailto:alex.v.marian@gmail.com"><img src="images/mail.png" alt="Email"></a>
-                  <a href="https://strava.app.link/nb7h5oq8t6b" target="_blank" rel="noopener"><img src="images/strava.png" alt="Strava"></a>
-                  <br><br>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <span>&copy; alexmarian.com</span>
-                </div>
-              </div>
-            </div>
-          </footer>
-        </div>
-      </div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+      <a class="email-link" href="mailto:alex.v.marian@gmail.com">Email</a>
     </div>
-  </body>
+  </div>
+</header>
+
+<main id="main">
+  <section aria-labelledby="projects-title">
+    <div class="wrap">
+      <p class="eyebrow">Projects</p>
+      <h1 id="projects-title">Things I’ve built with AI.</h1>
+      <p class="reading">The same instinct that runs through the day job — hand the repetitive work to a system, keep the judgment for yourself — applied at home. Each of these started as something for the family, and each one runs on its own now: new books every night, new sketches twice a day, a playable game, a live map of the sky.</p>
+
+      <ol class="project-index">
+        <li>
+          <div>
+            <p class="work-num">01</p>
+            <h3><a href="https://alexmarian.com/colin-maddy-storybooks/">Colin &amp; Maddy’s Storybook Library</a></h3>
+            <p>A new picture book for my kids every night — written, illustrated, and narrated with AI, then published to a library site where they can pick a book and press Listen for read-aloud narration. 80+ books and counting.</p>
+            <p><a class="text-link" href="https://alexmarian.com/colin-maddy-storybooks/">Visit the library <span class="arrow" aria-hidden="true">→</span></a></p>
+          </div>
+          <a class="project-thumb" href="https://alexmarian.com/colin-maddy-storybooks/">
+            <img src="https://alexmarian.com/colin-maddy-storybooks/books/colin-and-maddy-s-great-splash-park-rescue/images/p01.webp" alt="Illustrated cover of a Colin and Maddy storybook" width="1600" height="1066" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <div>
+            <p class="work-num">02</p>
+            <h3><a href="https://alexmarian.com/colin-truck-sketches/">Colin’s Truck Coloring Pages</a></h3>
+            <p>An ever-growing archive of AI-drawn coloring pages for my son — fire trucks, tow trucks, monster trucks, and more, each with its own scene. New sketches are generated twice a day, and every page can be downloaded and printed.</p>
+            <p><a class="text-link" href="https://alexmarian.com/colin-truck-sketches/">Browse the coloring pages <span class="arrow" aria-hidden="true">→</span></a></p>
+          </div>
+          <a class="project-thumb" href="https://alexmarian.com/colin-truck-sketches/">
+            <img src="https://alexmarian.com/colin-truck-sketches/thumbs/media-generation-coloring2o-ladder-downtown-0-06345e8a-82f6-4a47-818a-ec0adde19944.webp.jpg" alt="Black-and-white coloring page of a big ladder fire truck in a downtown street" width="640" height="427" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <div>
+            <p class="work-num">03</p>
+            <h3><a href="https://muse.ai/s/fire-truck-simulator-3d-zp6xixqyxv2cxw9/KcFt6oIByuo3UZNNlL6kM0bhjY-hyx6yK62PUvYOKhg">Fire Truck Simulator 3D</a></h3>
+            <p>Drive Engine 7 around a 3D town as Captain Alex, answer Dispatcher Rosa's emergency calls, and put out fires with a mouse-aimed water hose. Eleven missions plus Free Roam, four trucks to drive — pumper, ladder, brush pickup, and command SUV — with realistic sirens and engine sounds. Playable in the browser with keyboard and mouse.</p>
+            <p><a class="text-link" href="https://muse.ai/s/fire-truck-simulator-3d-zp6xixqyxv2cxw9/KcFt6oIByuo3UZNNlL6kM0bhjY-hyx6yK62PUvYOKhg">Play the game <span class="arrow" aria-hidden="true">→</span></a></p>
+          </div>
+          <a class="project-thumb" href="https://muse.ai/s/fire-truck-simulator-3d-zp6xixqyxv2cxw9/KcFt6oIByuo3UZNNlL6kM0bhjY-hyx6yK62PUvYOKhg">
+            <img src="images/fire-truck-simulator.jpg" alt="3D fire truck simulator game — red fire engine driving out of Station 7" width="720" height="450" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <div>
+            <p class="work-num">04</p>
+            <h3><a href="https://alexmarian.com/earth-satellites.html">Earth Satellites</a></h3>
+            <p>A real-time 3D Earth you can spin and zoom, surrounded by all 15,860 active satellites — from the ISS and Hubble to the full Starlink constellation. Click any satellite for its altitude, speed, and orbit path, or hide them all to see the continents on a daylight map.</p>
+            <p><a class="text-link" href="https://alexmarian.com/earth-satellites.html">Explore the satellites <span class="arrow" aria-hidden="true">→</span></a></p>
+          </div>
+          <a class="project-thumb" href="https://alexmarian.com/earth-satellites.html">
+            <img src="images/earth-satellites.jpg" alt="3D Earth from space surrounded by thousands of satellites" width="720" height="450" loading="lazy">
+          </a>
+        </li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <p><strong>Alex Marian</strong></p>
+      <p>Mukilteo, WA — Pacific Northwest</p>
+      <p><a href="mailto:alex.v.marian@gmail.com">alex.v.marian@gmail.com</a> · <a href="https://www.linkedin.com/in/alexmarian">LinkedIn</a></p>
+    </div>
+    <p class="footer-note">Built as a static site. No tracking.</p>
+  </div>
+</footer>
+<script src="site.js" defer></script>
+</body>
 </html>
