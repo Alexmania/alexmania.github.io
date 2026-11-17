@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Global identity migration — Alex Marian</title>
+<meta name="description" content="How Alex Marian led the migration from multiple linked accounts to one account with multiple profiles at Meta — with zero rollbacks.">
+<link rel="canonical" href="https://alexmarian.com/case-migration.html">
+<link rel="icon" type="image/png" href="images/tech.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Global identity migration — Alex Marian">
+<meta property="og:description" content="How Alex Marian led the migration from multiple linked accounts to one account with multiple profiles at Meta — with zero rollbacks.">
+<meta property="og:url" content="https://alexmarian.com/case-migration.html">
+<meta property="og:image" content="https://alexmarian.com/images/pnw_mountains_bg.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Global identity migration — Alex Marian">
+<meta name="twitter:description" content="How Alex Marian led the migration from multiple linked accounts to one account with multiple profiles at Meta — with zero rollbacks.">
+<meta name="twitter:image" content="https://alexmarian.com/images/pnw_mountains_bg.jpg">
+<link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="mist-machine.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Alex Marian</a>
+    <nav aria-label="Primary">
+      <button class="icon-btn menu-btn" type="button" data-menu-button aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">Menu</button>
+      <ul class="nav-list" id="primary-nav" data-open="false">
+        <li><button class="icon-btn nav-close" type="button" data-menu-close aria-label="Close menu">Close ✕</button></li>
+        <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="experience.html">Experience</a></li><li><a href="projects.html">Projects</a></li><li><a href="Resume.pdf">Résumé</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+      <a class="email-link" href="mailto:alex.v.marian@gmail.com">Email</a>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section aria-labelledby="case-title">
+    <div class="wrap reading">
+      <p class="eyebrow">Case Study 01 — Meta / Accounts Center</p>
+      <h1 id="case-title">Global identity migration</h1>
+      <p class="lede">From multiple linked accounts to one account with multiple profiles — shipped without breaking the thing people trust most.</p>
+      <figure class="case-visual"><svg viewBox="0 0 800 450" role="img" aria-label="Abstract diagram: many scattered nodes on the left converge into one node on the right, which then serves several profiles">
+<rect width="800" height="450" fill="#F1F4F2"/>
+<g fill="#9AB5B0"><circle cx="120" cy="90" r="10"/><circle cx="120" cy="180" r="10"/><circle cx="120" cy="270" r="10"/><circle cx="120" cy="360" r="10"/><circle cx="220" cy="135" r="8"/><circle cx="220" cy="225" r="8"/><circle cx="220" cy="315" r="8"/></g>
+<g stroke="#9AB5B0" stroke-width="1.5"><line x1="120" y1="90" x2="400" y2="225"/><line x1="120" y1="180" x2="400" y2="225"/><line x1="120" y1="270" x2="400" y2="225"/><line x1="120" y1="360" x2="400" y2="225"/><line x1="220" y1="135" x2="400" y2="225"/><line x1="220" y1="225" x2="400" y2="225"/><line x1="220" y1="315" x2="400" y2="225"/></g>
+<circle cx="400" cy="225" r="16" fill="#C46A3B"/>
+<g fill="#2E5A4A"><circle cx="560" cy="180" r="9"/><circle cx="560" cy="225" r="9"/><circle cx="560" cy="270" r="9"/></g>
+<g stroke="#2E5A4A" stroke-width="1.5"><line x1="400" y1="225" x2="560" y2="180"/><line x1="400" y1="225" x2="560" y2="225"/><line x1="400" y1="225" x2="560" y2="270"/></g>
+<g font-family="IBM Plex Mono, monospace" font-size="14" fill="#3D4A46"><text x="60" y="420">BEFORE — MANY LINKED ACCOUNTS</text><text x="560" y="420">AFTER — ONE ACCOUNT</text></g></svg>
+<figcaption>Before / after, in abstract: many linked accounts converge into one account with many profiles.</figcaption></figure>
+      <div class="case-steps"><section><h2>Context</h2><p>Technical Program Manager at Meta since May 2021, working on Accounts Center and Settings. The migration spanned <strong>4 organizations</strong> and <strong>11 workstreams</strong>.</p></section><section><h2>Problem</h2><p>Identity was fragmented across apps: people held multiple linked accounts, and every change touched many teams at once. A migration at this scale fails loudly if any one team blocks it — so the program had to be built so that no single-team dependency could block the release.</p></section><section><h2>Solution</h2><p>Alex served as partner point-of-contact, created the staged rollout plan, and ran central launch command — war-room operations, preemptive incident mitigation, and on-call layering across the workstreams — so the migration moved in controlled stages with risks caught before they became incidents.</p></section><section><h2>Wins</h2><p>Shipped with top-tier metrics neutral and <strong>zero rollbacks</strong> — the migration landed, and the experience people relied on stayed intact.</p></section></div>
+      <p class="next-case"><a class="text-link" href="case-design-system.html">Next: Design-system adoption <span class="arrow" aria-hidden="true">→</span></a> · <a class="text-link" href="experience.html">All experience</a></p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <p><strong>Alex Marian</strong></p>
+      <p>Mukilteo, WA — Pacific Northwest</p>
+      <p><a href="mailto:alex.v.marian@gmail.com">alex.v.marian@gmail.com</a> · <a href="https://www.linkedin.com/in/alexmarian">LinkedIn</a></p>
+    </div>
+    <p class="footer-note">Built as a static site. No tracking.</p>
+  </div>
+</footer>
+<script src="site.js" defer></script>
+</body>
+</html>
