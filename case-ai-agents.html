@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI agents for intake triage — Alex Marian</title>
+<meta name="description" content="How Alex Marian deployed AI agents that cut intake triage from 15–30 minutes to under 30 seconds at Meta.">
+<link rel="canonical" href="https://alexmarian.com/case-ai-agents.html">
+<link rel="icon" type="image/png" href="images/tech.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI agents for intake triage — Alex Marian">
+<meta property="og:description" content="How Alex Marian deployed AI agents that cut intake triage from 15–30 minutes to under 30 seconds at Meta.">
+<meta property="og:url" content="https://alexmarian.com/case-ai-agents.html">
+<meta property="og:image" content="https://alexmarian.com/images/pnw_mountains_bg.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI agents for intake triage — Alex Marian">
+<meta name="twitter:description" content="How Alex Marian deployed AI agents that cut intake triage from 15–30 minutes to under 30 seconds at Meta.">
+<meta name="twitter:image" content="https://alexmarian.com/images/pnw_mountains_bg.jpg">
+<link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="mist-machine.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Alex Marian</a>
+    <nav aria-label="Primary">
+      <button class="icon-btn menu-btn" type="button" data-menu-button aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">Menu</button>
+      <ul class="nav-list" id="primary-nav" data-open="false">
+        <li><button class="icon-btn nav-close" type="button" data-menu-close aria-label="Close menu">Close ✕</button></li>
+        <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="experience.html">Experience</a></li><li><a href="projects.html">Projects</a></li><li><a href="Resume.pdf">Résumé</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+      <a class="email-link" href="mailto:alex.v.marian@gmail.com">Email</a>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section aria-labelledby="case-title">
+    <div class="wrap reading">
+      <p class="eyebrow">Case Study 03 — Meta / AI Automation</p>
+      <h1 id="case-title">AI agents for intake triage</h1>
+      <p class="lede">Recurring manual work handed to agents, so people spend their time on the requests that actually need a person.</p>
+      <figure class="case-visual"><svg viewBox="0 0 800 450" role="img" aria-label="Abstract flow diagram: requests enter on the left, pass through an agent, and reach a person only when needed">
+<rect width="800" height="450" fill="#F1F4F2"/>
+<g font-family="IBM Plex Mono, monospace" font-size="15" fill="#12211E">
+<rect x="60" y="175" width="170" height="100" rx="10" fill="#FFFFFF" stroke="#D8DED9"/><text x="145" y="230" text-anchor="middle">REQUESTS IN</text>
+<rect x="330" y="175" width="170" height="100" rx="10" fill="#1E3A32"/><text x="415" y="230" text-anchor="middle" fill="#FBFAF7">AGENT</text>
+<rect x="600" y="120" width="150" height="80" rx="10" fill="#FFFFFF" stroke="#D8DED9"/><text x="675" y="165" text-anchor="middle">RESOLVED</text>
+<rect x="600" y="250" width="150" height="80" rx="10" fill="#FFFFFF" stroke="#C46A3B"/><text x="675" y="295" text-anchor="middle">TO A PERSON</text></g>
+<g stroke="#2E5A4A" stroke-width="2" fill="none"><path d="M230 225 H330"/><path d="M500 205 L600 160"/><path d="M500 245 L600 290"/></g></svg>
+<figcaption>Most requests resolve with the agent; only the ones that need a person reach one.</figcaption></figure>
+      <div class="case-steps"><section><h2>Context</h2><p>Partner intake for the Meta Account platform, built by consolidating two separate processes into one system with scoped request forms and impacted-surface capture — as the platform scaled toward <strong>30+ integrated apps</strong>.</p></section><section><h2>Problem</h2><p>Manual triage took <strong>15–30 minutes per request</strong>, and requests arrived across <strong>six product surfaces</strong>. High-volume intake and defect inflow kept growing, and adding headcount was not the answer.</p></section><section><h2>Solution</h2><p>Alex deployed multiple agents that eliminated recurring manual work: an intake triage agent that auto-resolves the majority of incoming requests, and a content-based bug-classification agent covering <strong>18 product categories</strong>.</p></section><section><h2>Wins</h2><p>Handling time fell from <strong>15–30 minutes to under 30 seconds</strong>, with <strong>45+ requests triaged across six product surfaces</strong> — scaling high-volume intake and defect inflow without added headcount.</p><p>The Vibes app launch is a separate entry on the <a href="experience.html">Experience page</a>, not part of this case study.</p></section></div>
+      <p class="next-case"><a class="text-link" href="case-migration.html">Next: Global identity migration <span class="arrow" aria-hidden="true">→</span></a> · <a class="text-link" href="experience.html">All experience</a></p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <p><strong>Alex Marian</strong></p>
+      <p>Mukilteo, WA — Pacific Northwest</p>
+      <p><a href="mailto:alex.v.marian@gmail.com">alex.v.marian@gmail.com</a> · <a href="https://www.linkedin.com/in/alexmarian">LinkedIn</a></p>
+    </div>
+    <p class="footer-note">Built as a static site. No tracking.</p>
+  </div>
+</footer>
+<script src="site.js" defer></script>
+</body>
+</html>
