@@ -2,79 +2,59 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="images/tech.png" hreflang="en-us" />
-    <title>Alex Marian / About</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Alex Marian / About</title>
     <meta name="description" content="About Alex Marian — TPM in Seattle passionate about mobile tech, UX, and cross-functional collaboration." />
-    <link href="cover.css" rel="stylesheet" />
-    <link href="menu.css" rel="stylesheet" />
-    <style>
-      .cover-container p { text-align: left; }
-      .hero-banner {
-        width: 100%;
-        border-radius: 14px;
-        object-fit: cover;
-        height: 280px;
-        margin-bottom: 24px;
-        box-shadow: 0 3px 8px rgba(0,0,0,.15);
-      }
-      @media (min-width: 768px){
-        .hero-banner { height: 340px; }
-      }
-    </style>
+    <link rel="canonical" href="https://alexmarian.com/about.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Alex Marian / About" />
+    <meta property="og:description" content="About Alex Marian — TPM in Seattle passionate about mobile tech, UX, and cross-functional collaboration." />
+    <meta property="og:url" content="https://alexmarian.com/about.html" />
+    <meta property="og:image" content="https://alexmarian.com/images/me_pnw.jpeg" />
+    <meta property="og:image:width" content="1536" />
+    <meta property="og:image:height" content="864" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alex Marian / About" />
+    <meta name="twitter:description" content="About Alex Marian — TPM in Seattle passionate about mobile tech, UX, and cross-functional collaboration." />
+    <meta name="twitter:image" content="https://alexmarian.com/images/me_pnw.jpeg" />
+    <link rel="icon" type="image/png" href="images/tech.png" />
+    <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <header class="header" role="navigation" aria-label="Primary">
-      <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" aria-current="page">About</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="projects.html">Projects</a></li>
-      </ul>
+    <header class="site-header">
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner-about">
-        <div class="cover-container">
-          <!-- Hero banner image -->
-          <img src="images/me_pnw.jpeg" alt="Alex Marian in the Pacific Northwest" class="hero-banner" loading="eager" fetchpriority="high" />
+    <main>
+      <h1>About me</h1>
+      <picture>
+        <source srcset="images/me-pnw-1200.webp" type="image/webp" />
+        <img class="portrait" src="images/me-pnw-1200.jpg" alt="Alex Marian in the Pacific Northwest" width="1200" height="675" loading="eager" fetchpriority="high" />
+      </picture>
 
-          <h2>About me</h2>
-          <p class="mt-3">
-            I’m a Technical Program Manager (TPM) based in the Pacific Northwest, where I live with my wife, son, and daughter. 
-            In my professional work, I focus on building and scaling user-centric experiences, with a particular passion for mobile technology and cross-functional collaboration. 
-            I enjoy partnering closely with engineering and product teams to ensure alignment on priorities and to deliver solutions that make a meaningful impact for end users. 
-            Seeing products I’ve contributed to reach millions of people continues to be a key motivator in my career.<br><br>
+      <p>I’m a Technical Program Manager (TPM) based in the Pacific Northwest, where I live with my wife, son, and daughter. In my professional work, I focus on building and scaling user-centric experiences, with a particular passion for mobile technology and cross-functional collaboration. I enjoy partnering closely with engineering and product teams to ensure alignment on priorities and to deliver solutions that make a meaningful impact for end users. Seeing products I’ve contributed to reach millions of people continues to be a key motivator in my career.</p>
 
-            Outside of work, I’ve embarked on a journey to live a healthier and more balanced life. 
-            I began running in the summer of 2025 and have since completed my first marathon — and I continue to enjoy running. 
-            This has also sparked a deeper interest in holistic health, where I’m learning more about how fitness, nutrition, and overall well-being contribute to long-term growth and resilience.<br><br>
+      <p>Outside of work, I’ve embarked on a journey to live a healthier and more balanced life. I began running in the summer of 2025 and have since completed my first marathon — and I continue to enjoy running. This has also sparked a deeper interest in holistic health, where I’m learning more about how fitness, nutrition, and overall well-being contribute to long-term growth and resilience.</p>
 
-            Beyond running, I enjoy spending time with my family, exploring the outdoors, and traveling to new destinations. 
-            Whether it’s through my professional projects or personal pursuits, I’m always looking for opportunities to learn, improve, and take on challenges that expand my perspective.
-          </p>
+      <p>Beyond running, I enjoy spending time with my family, exploring the outdoors, and traveling to new destinations. Whether it’s through my professional projects or personal pursuits, I’m always looking for opportunities to learn, improve, and take on challenges that expand my perspective.</p>
+    </main>
 
-          <footer>
-            <div class="container">
-              <div class="row">
-                <div class="col">
-                  <a href="https://www.linkedin.com/in/alexmarian" target="_blank" rel="noopener"><img src="images/linkedin.png" alt="LinkedIn"></a>
-                  <a href="https://www.threads.net/@alexmarian.me" target="_blank" rel="noopener"><img src="images/threads.svg" alt="Threads" height="14"></a>
-                  <a href="https://github.com/Alexmania" target="_blank" rel="noopener"><img src="images/github.png" alt="GitHub"></a>
-                  <a href="mailto:alex.v.marian@gmail.com"><img src="images/mail.png" alt="Email"></a>
-                  <a href="https://strava.app.link/nb7h5oq8t6b" target="_blank" rel="noopener"><img src="images/strava.png" alt="Strava"></a>
-                  <br><br>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <span>&copy; alexmarian.com</span>
-                </div>
-              </div>
-            </div>
-          </footer>
-        </div>
+    <footer class="site-footer">
+      <div class="inner">
+        <a href="mailto:alex.v.marian@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/alexmarian" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Alexmania" target="_blank" rel="noopener">GitHub</a>
+        <a href="Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        <span class="mark">© alexmarian.com</span>
       </div>
-    </div>
+    </footer>
   </body>
 </html>
