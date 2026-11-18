@@ -56,6 +56,9 @@
     });
   }
   var revealEls = document.querySelectorAll(".reveal");
+  function revealAll() {
+    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+  }
   if ("IntersectionObserver" in window && revealEls.length) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -63,7 +66,10 @@
       });
     }, { rootMargin: "0px 0px -8% 0px" });
     revealEls.forEach(function (el) { io.observe(el); });
+    /* Safety net: content must never stay hidden if the observer
+       never fires (fast scroll, full-page capture, odd browsers). */
+    setTimeout(revealAll, 1500);
   } else {
-    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+    revealAll();
   }
 })();
